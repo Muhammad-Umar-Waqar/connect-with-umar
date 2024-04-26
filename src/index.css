@@ -74,3 +74,22 @@
       @apply bg-background text-foreground;
     }
   }
+
+/* Initially hide the button and overlay */
+.overlay,
+.opacity-0 {
+  opacity: 0;
+}
+
+/* Show the button and overlay when hovering over the image */
+.relative:hover .overlay,
+.relative:hover .opacity-0 {
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 0.5rem; 
+  opacity: 1;
+}
+
+/* Show the overlay with desired opacity when hovering over the image */
+.relative:hover .overlay {
+  opacity: 0.5;
+}

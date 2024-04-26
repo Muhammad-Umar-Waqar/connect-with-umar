@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-scroll";
 import { RxCross1 } from "react-icons/rx";
+import 'animate.css'
+
 
 
 
@@ -24,10 +26,10 @@ export default function Header() {
           </Link>
 
 
-          <div className="block lg:hidden ml-auto " >
+          <div className="block lg:hidden ml-[auto]  " >
           {
               mobileNav === false ? 
-              <button className="text-gray-600   hover:text-gray-900 focus:outline-none focus:text-gray-900" onClick={HandleNav}>
+              <button className="text-gray-600 mr-[10px]  shadow-sm  hover:text-orange-400 focus:outline-none focus:text-gray-900" onClick={HandleNav}>
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   stroke-linecap="round"
@@ -36,7 +38,7 @@ export default function Header() {
                   d="M4 6h16M4 12h16m-7 6h7"
                 ></path>
               </svg>
-            </button> : <RxCross1 className="cursor-pointer"  onClick={HandleNav}/>
+            </button> : <RxCross1 className="cursor-pointer animate-pulse transition-transform duration-1000 mr-[10px]  hover:text-orange-400 "  onClick={HandleNav}/>
             }
             
 </div>
@@ -46,12 +48,12 @@ export default function Header() {
             className={`${mobileNav === true ? "block" : "hidden" }  ml-auto mr-auto justify-between items-center w-full lg:flex lg:w-auto lg:order-1`}
             id="mobile-menu-2"
           > 
-            <ul className="flex flex-col border-0 outline-none mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+            <ul className={`${mobileNav === true ? "animate-slidein-left transition-transform duration-500 " : "" } flex flex-col border-0 outline-none mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0`}>
               <li>
                 
                 <Link 
                 to="home"
-                  className="focus:outline-none focus:bg-transparent bg-transparent   
+                  className=" shadow-sm lg:shadow-none focus:outline-none focus:bg-transparent bg-transparent   
                     block py-2 pr-4 pl-3 duration-200  cursor-pointer
                     text-gray-700  lg:bg-transparent  lg:hover:bg-transparent lg:border-0 hover:text-orange-700 
                      lg:p-0 "
@@ -63,7 +65,7 @@ export default function Header() {
               <li>
                 <Link
                    to="about"
-                  className="    lg:bg-transparent focus:outline-none focus:bg-transparent  block py-2 pr-4 pl-3 duration-200  cursor-pointer
+                  className="  shadow-sm lg:shadow-none    lg:bg-transparent focus:outline-none focus:bg-transparent  block py-2 pr-4 pl-3 duration-200  cursor-pointer
                            text-gray-700 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 
                             lg:p-0"
                             spy={true} smooth={true} offset={-105} duration={500} onClick ={()=>setMobileNav(false)}
@@ -76,7 +78,7 @@ export default function Header() {
                 <li>
                 <Link
                 to="skills"
-                className="lg:bg-transparent   focus:outline-none focus:bg-transparent  block py-2 pr-4 pl-3 duration-200  cursor-pointer
+                className=" shadow-sm lg:shadow-none lg:bg-transparent   focus:outline-none focus:bg-transparent  block py-2 pr-4 pl-3 duration-200  cursor-pointer
                 text-gray-700  lg:hover:bg-transparent lg:border-0 hover:text-orange-700 
                  lg:p-0" 
                  spy={true} smooth={true} offset={-105} duration={500} onClick ={()=>setMobileNav(false)}
@@ -87,7 +89,7 @@ export default function Header() {
               <li>
                 <Link
                    to="projects"
-                   className=" lg:bg-transparent   focus:outline-none focus:bg-transparent  block py-2 pr-4 pl-3 duration-200  cursor-pointer
+                   className=" shadow-sm lg:shadow-none  lg:bg-transparent   focus:outline-none focus:bg-transparent  block py-2 pr-4 pl-3 duration-200  cursor-pointer
                    text-gray-700  lg:hover:bg-transparent lg:border-0 hover:text-orange-700 
                     lg:p-0"
                     spy={true} smooth={true} offset={-105} duration={500} onClick ={()=>setMobileNav(false)}
@@ -98,7 +100,7 @@ export default function Header() {
                 <li>
                 <Link
                    to="contact"
-                   className="  lg:bg-transparent  focus:outline-none focus:bg-transparent  block py-2 pr-4 pl-3 duration-200  cursor-pointer
+                   className=" shadow-sm lg:shadow-none   lg:bg-transparent  focus:outline-none focus:bg-transparent  block py-2 pr-4 pl-3 duration-200  cursor-pointer
                    text-gray-700 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 
                     lg:p-0"
                     spy={true} smooth={true} offset={-105} duration={500} onClick ={()=>setMobileNav(false)}

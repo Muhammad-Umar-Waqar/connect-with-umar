@@ -1,5 +1,6 @@
 import 'animate.css'
 
+
 function Home() {
   return (
     <div id='home'>
@@ -13,7 +14,7 @@ function Home() {
 
         <img
           src="https://www.connectwithahmed.com/circle.svg"
-          className=" animate__animated animate__zoomIn  absolute z-1 w-full  hidden md:block h-[75%] md:h-[50%] md-w-auto md:top-[100px] md:right-[40%] xl:top-[140px] top-[60%] left-0"
+          className=" animate__animated animate__zoomIn   absolute z-1 w-full  hidden md:block h-[75%] md:h-[50%] md-w-auto md:top-[100px] md:right-[40%] xl:top-[140px] top-[60%] left-0"
           alt=""
         />
 
@@ -30,7 +31,7 @@ function Home() {
           </div>
           <div className="z-23 md:h-[70px] mt-10 flex-col items-center justify-left w-[250px] xs:w-[300px] shadow-lg rounded-lg border bg-transparent">
             <div className="text-center mt-[10px] ml-auto">
-              <p className="text-gray-500 font-bold DMsans ">FRONT END DEVELOPER</p>
+              <p className="text-gray-500 font-bold DMsans">FRONT END DEVELOPER</p>
               <p className="text-gray-500 font-bold DMsans">Internee at YoungDev Intern</p>
             </div>
             <div className="text-center mt-[10px] ml-auto z-44 shadow-lg rounded-lg border bg-transparent">
@@ -59,10 +60,10 @@ function Home() {
           </div>
         </div>
 
-      <img src="./next.webp" className="animate__animated animate__zoomIn absolute h-[60px]  top-[84%]  right-[30%] md:top-[80%] md:right-[36%] rounded-full xl:hidden block bg-white     p-4 sm:h-[100px] w-auto z-44" alt="" />
-      <img src="./react.webp" className="animate__animated animate__zoomIn absolute h-[60px] top-[70%]  right-[25%] md:top-[60%] md:right-[30%]  rounded-full xl:hidden block bg-white p-4    sm:h-[80px] w-auto z-44" alt="" />
-      <img src="./ts.webp" className="animate__animated animate__zoomIn absolute h-[60px] top-[70%]  left-[20%] md:top-[60%] md:left-[30%]  rounded-full xl:hidden block bg-white p-4    sm:h-[80px] w-auto z-44" alt="" />
-      <img src="./js.webp" className="animate__animated animate__zoomIn absolute h-[60px] top-[84%]  left-[25%] md:top-[80%] md:left-[35%]  rounded-full  xl:hidden block bg-white p-4  sm:h-[100px] w-auto z-44" alt="" />
+      <img src="./next.webp" className="animate__animated animate__zoomIn absolute h-[60px]  top-[74%]  right-[30%] md:top-[80%] md:right-[36%] rounded-full xl:hidden block bg-white     p-4 sm:h-[100px] w-auto z-44" alt="" />
+      <img src="./react.webp" className="animate__animated animate__zoomIn absolute h-[60px] top-[60%]  right-[25%] md:top-[60%] md:right-[30%]  rounded-full xl:hidden block bg-white p-4    sm:h-[80px] w-auto z-44" alt="" />
+      <img src="./ts.webp" className="animate__animated animate__zoomIn absolute h-[60px] top-[60%]  left-[20%] md:top-[60%] md:left-[30%]  rounded-full xl:hidden block bg-white p-4    sm:h-[80px] w-auto z-44" alt="" />
+      <img src="./js.webp" className="animate__animated animate__zoomIn absolute h-[60px] top-[74%]  left-[25%] md:top-[80%] md:left-[35%]  rounded-full  xl:hidden block bg-white p-4  sm:h-[100px] w-auto z-44" alt="" />
       </div>
       <div>
         
