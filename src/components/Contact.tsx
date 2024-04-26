@@ -14,33 +14,37 @@ function Contact() {
 const [loading, setLoading] = useState(false)
 
 
-  const sendEmail = (_data:any, resetForm: () => void) => {
-    emailjs
-      .sendForm('service_s0tfb9m', 'template_kbe18nf', formRef.current!, { // Pass formRef.current to sendForm
-        publicKey: '_inDmGHuLEo18yunJ',
-      })
-      .then(
-        () => {
-          console.log('SUCCESS!');
-          resetForm();
-          toast.success("Message Sent Successfully!", {
-         position: "top-right"
-      });
-          
-        },
-        (error) => {
-          toast.error("Email Not Sent !", {
-            position: "top-right"
-          });
-          console.log('FAILED to Send Email...', error);
-        },
-      );
-  };
+const sendEmail = (_data: any, resetForm: () => void) => {
+  setLoading(true);
+  emailjs
+    .sendForm('service_s0tfb9m', 'template_kbe18nf', formRef.current!, {
+      publicKey: '_inDmGHuLEo18yunJ',
+    })
+    .then(
+      () => {
+        console.log('SUCCESS!');
+        resetForm();
+        toast.success("Message Sent Successfully!", {
+          position: "top-right"
+        });
+      },
+      (error) => {
+        toast.error("Email Not Sent !", {
+          position: "top-right"
+        });
+        console.log('FAILED to Send Email...', error);
+      }
+    )
+    .finally(() => {
+      setLoading(false); // Set loading to false regardless of success or failure
+    });
+};
+
 
   const onSubmit = (data: any) => {
-    setLoading(true)
+    
     sendEmail(data, resetForm); // Send email using EmailJS
-    setLoading(false)
+   
   };
 
   const resetForm = () => {
