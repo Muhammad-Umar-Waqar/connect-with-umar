@@ -32,9 +32,9 @@ export default function Header() {
               <button className="text-gray-600 mr-[10px]  shadow-sm  hover:text-orange-400 focus:outline-none focus:text-gray-900" onClick={HandleNav}>
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M4 6h16M4 12h16m-7 6h7"
                 ></path>
               </svg>
@@ -107,6 +107,19 @@ export default function Header() {
                 >
                   CONTACT
                 </Link>
+              </li>
+                <li>
+                {/* <Link
+                   to="contact"
+                   className=" shadow-sm lg:shadow-none   lg:bg-transparent  focus:outline-none focus:bg-transparent  block py-2 pr-4 pl-3 duration-200  cursor-pointer
+                   text-gray-700 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 
+                    lg:p-0"
+                    spy={true} smooth={true} offset={-105} duration={500} onClick ={()=>setMobileNav(false)}
+                > */}
+                  <a className=" shadow-sm lg:shadow-none   lg:bg-transparent  focus:outline-none focus:bg-transparent  block py-2 pr-4 pl-3 duration-200  cursor-pointer
+                   text-gray-700 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 
+                    lg:p-0" target="_blank" href="./myCV.pdf">My CV</a>
+                {/* </Link> */}
               </li>
 
             </ul>

@@ -13,7 +13,7 @@ function Home() {
         />
 
         <img
-          src="https://www.connectwithahmed.com/circle.svg"
+          src="./circle.svg"
           className=" animate__animated animate__zoomIn   absolute z-1 w-full  hidden md:block h-[75%] md:h-[50%] md-w-auto md:top-[100px] md:right-[40%] xl:top-[140px] top-[60%] left-0"
           alt=""
         />
