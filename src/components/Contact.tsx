@@ -1,16 +1,17 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
-import { useRef } from "react"; // Import useRef
+import { useRef, useState } from "react"; // Import useRef
 import { useForm } from "react-hook-form";
 import { fadeIn } from "./variants";
 import emailjs from '@emailjs/browser';
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 
 
 function Contact() {
   const formRef = useRef<HTMLFormElement | null>(null); // Initialize useRef with null
-
+const [loading, setLoading] = useState(false)
 
 
   const sendEmail = (_data:any, resetForm: () => void) => {
@@ -22,17 +23,24 @@ function Contact() {
         () => {
           console.log('SUCCESS!');
           resetForm();
-          toast.success("Email Sent Successfully")
+          toast.success("Message Sent Successfully!", {
+         position: "top-right"
+      });
+          
         },
         (error) => {
-          console.log('FAILED...', error);
+          toast.error("Email Not Sent !", {
+            position: "top-right"
+          });
+          console.log('FAILED to Send Email...', error);
         },
       );
   };
 
   const onSubmit = (data: any) => {
-    console.log(data); // Optional: Log form data
+    setLoading(true)
     sendEmail(data, resetForm); // Send email using EmailJS
+    setLoading(false)
   };
 
   const resetForm = () => {
@@ -56,7 +64,7 @@ function Contact() {
         >
           <button className=" shadow-2xl flex bg-pink-50 h-[70px] min-w-[290px]   rounded-xl items-center p-[16px]">
             <img
-              src="https://www.connectwithahmed.com/_next/image?url=%2Femail.png&w=1920&q=75"
+              src="./email.jpg"
               className="h-[30px] w-auto mr-2"
               alt=""
             />
@@ -73,7 +81,7 @@ function Contact() {
         >
           <button className="  shadow-2xl flex bg-blue-50 h-[70px] min-w-[290px] md:mt-[0] mt-[20px]   rounded-xl items-center p-[16px]">
             <img
-              src="https://www.connectwithahmed.com/_next/image?url=%2Fmobile.png&w=1920&q=75"
+              src="./mobile.jpg"
               className="h-[30px] w-auto mr-2"
               alt=""
             />
@@ -93,13 +101,20 @@ function Contact() {
             />
           </div>
           <div>
-            <input
-              {...register("from_email")}
-              name="from_email"
-              type="email"
-              placeholder="Your Email"
-              className="md:w-[650px] w-[300px] sm:w-[500px]  p-[15px]  rounded-xl bg-gray-100 outline-none"
-            />
+          <input
+  {...register("from_email", {
+    required: "Email is required",
+    pattern: {
+      value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+      message: "Invalid email address"
+    }
+  })}
+  name="from_email"
+  type="email"
+  placeholder="Your Email"
+  className="md:w-[650px] w-[300px] sm:w-[500px] p-[15px] rounded-xl bg-gray-100 outline-none"
+/>
+
           </div>
           <div>
             <textarea
@@ -117,12 +132,13 @@ function Contact() {
               variant="destructive"
               className="p-[5px ] h-[50px] mb-[60px] hover:bg-red-700"
             >
-              Send Message
+              {loading === true ? "Sending Mesage...":"Send Message"}
             </Button>
           </div>
         </div>
       </form>
       {/* <p className="m-50px">{data}</p> */}
+       <ToastContainer/>
     </div>
   );
 }
