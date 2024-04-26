@@ -10,7 +10,7 @@ function Projects() {
   const [filteredData, setFilteredData] = useState<Project[]>([]);
 
   useEffect(() => {
-    axios.get("../../src/projects.json")
+    axios.get("../../src/Projects.json")
       .then(res => {
         const data = res.data;
         setData(data);
