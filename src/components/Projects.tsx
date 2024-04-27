@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import axios from "axios";
+// import axios from "axios";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { fadeIn } from "./variants";
@@ -9,17 +9,32 @@ function Projects() {
   const [data, setData] = useState<Project[]>([]);
   const [filteredData, setFilteredData] = useState<Project[]>([]);
 
-  useEffect(() => {
-    axios.get("../../Projects.json")
-      .then(res => {
-        const data = res.data;
-        setData(data);
-        setFilteredData(data);
-      })
+  // useEffect(() => {
+  //   axios.get("../../Projects.json")
+  //     .then(res => {
+  //       const data = res.data;
+  //       setData(data);
+  //       setFilteredData(data);
+  //     })
+  //     .catch(error => {
+  //       console.error('Error fetching JSON:', error);
+  //     });
+  // }, []);
+
+  useEffect(()=>{
+ 
+     fetch('../../Projects.json')
+      .then(res => res.json())
+      .then(json=> {
+        console.log(json);
+        
+        setData(json)
+        setFilteredData(json)
+      }  )
       .catch(error => {
-        console.error('Error fetching JSON:', error);
-      });
-  }, []);
+              console.error('Error fetching JSON:', error);
+          });
+  })
 
   function handleAll() {
     setFilteredData(data);
