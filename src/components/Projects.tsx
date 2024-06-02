@@ -46,30 +46,17 @@ function Projects() {
       </div>
       <div className="mt-[50px] flex">
         <div className="grid grid-cols-2 sm:grid-cols-4    gap-2">
-          <motion.div  variants={fadeIn("up", 0.2 )}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.6 }} > 
+          
             <Button className="" onClick={() => handleFilter('React')}>React</Button>
-            </motion.div>
-          <motion.div   variants={fadeIn("up", 0.2 )}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.10 }}> 
+
             <Button className="mx-[10px]" onClick={() => handleFilter('Next')}>Next Js</Button>
-            </motion.div>
-          <motion.div   variants={fadeIn("up", 0.2 )}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.14 }}> 
+            
+          
             <Button className="" onClick={() => handleFilter('js')}>Javascript</Button>
-            </motion.div>
-          <motion.div   variants={fadeIn("up", 0.2 )}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.18 }}> 
-            <Button className="mx-[10px]" onClick={() => handleAll()}>All</Button>
-            </motion.div>
+            
+          
+            <Button className="mx-[10px]" >All</Button>
+         
         </div>
       </div>
       <div>
