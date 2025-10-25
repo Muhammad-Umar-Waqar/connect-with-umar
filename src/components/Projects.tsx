@@ -21,9 +21,9 @@ function Projects() {
       });
   }, []);
 
-  // function handleAll() {
-  //   setFilteredData(data);
-  // }
+    function handleAll() {
+      setFilteredData(data);
+    }
 
   interface Project {
     image: string;
@@ -55,7 +55,7 @@ function Projects() {
             <Button className="" onClick={() => handleFilter('js')}>Javascript</Button>
             
           
-            <Button className="mx-[10px]" >All</Button>
+            <Button className="mx-[10px]" onClick= {()=> handleAll()}>All</Button>
          
         </div>
       </div>
