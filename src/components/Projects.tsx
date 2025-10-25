@@ -21,9 +21,9 @@ function Projects() {
       });
   }, []);
 
-  function handleAll() {
-    setFilteredData(data);
-  }
+  // function handleAll() {
+  //   setFilteredData(data);
+  // }
 
   interface Project {
     image: string;
