@@ -118,7 +118,7 @@ export default function Header() {
                 > */}
                   <a className=" shadow-sm lg:shadow-none   lg:bg-transparent  focus:outline-none focus:bg-transparent  block py-2 pr-4 pl-3 duration-200  cursor-pointer
                    text-gray-700 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 
-                    lg:p-0" target="_blank" href="./myCV.pdf">My CV</a>
+                    lg:p-0" target="_blank" href="./Umar_Waqar_MERN_Developer_CV.pdf">My CV</a>
                 {/* </Link> */}
               </li>
 
